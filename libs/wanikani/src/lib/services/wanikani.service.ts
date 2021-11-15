@@ -1,15 +1,15 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, switchMap } from 'rxjs/operators';
-import { SubjectResponse, SummaryResponse, Subject } from '../interfaces/responses.interface';
-import { Subjects } from '../enums/subjects.enums';
 import { Observable, of } from 'rxjs';
+import { SummaryResponse, Subjects, Subject, SubjectResponse } from '@japanese/api/wanikani';
 
-Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: 'root' })
 export class WanikaniService {
   summaryUrl = 'https://api.wanikani.com/v2/summary';
   subjectUrl = 'https://api.wanikani.com/v2/subjects';
-  headers = { headers: { 'Authorization': `Bearer 12345` } };
+  headers = { headers: { 'Authorization': `Bearer 123` } };
   constructor(private http: HttpClient) {}
 
   public loadByReview() {

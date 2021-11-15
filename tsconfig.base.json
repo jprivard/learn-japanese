@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@japanese/api/wanikani": ["libs/api/wanikani/src/index.ts"],
       "@japanese/wanikani": ["libs/wanikani/src/index.ts"]
     }
   },

@@ -1,6 +1,29 @@
 {
   "version": 1,
   "projects": {
+    "api-wanikani": {
+      "root": "libs/api/wanikani",
+      "sourceRoot": "libs/api/wanikani/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/api/wanikani/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/api/wanikani"],
+          "options": {
+            "jestConfig": "libs/api/wanikani/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
     "learn": {
       "projectType": "application",
       "root": "apps/learn",

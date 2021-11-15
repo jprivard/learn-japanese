@@ -5,12 +5,12 @@ import { mergeMap, map, catchError } from 'rxjs/operators';
 import { SubjectActions } from '../actions';
 import { WanikaniService } from '../services/wanikani.service';
 
-Injectable()
+@Injectable()
 export class SubjectEffects {
   load$ = createEffect(() =>
     this.actions$.pipe(
       ofType(SubjectActions.load),
-      mergeMap(() => /*this.service.loadByReview()*/of([]).pipe(
+      mergeMap(() => this.service.loadByReview().pipe(
         map(subjects => SubjectActions.loaded({ subjects })),
         catchError((error) => of(SubjectActions.loadFailed({ error })))
       ))
@@ -19,6 +19,6 @@ export class SubjectEffects {
 
   constructor(
     private actions$: Actions,
-    // private service: WanikaniService
+    private service: WanikaniService
   ) {}
 }

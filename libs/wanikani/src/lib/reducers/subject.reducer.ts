@@ -1,16 +1,16 @@
-import { Action, createReducer, on } from "@ngrx/store";
-import { SubjectActions } from "../actions";
+import { Subject } from '@japanese/api/wanikani';
+import { Action, createReducer, on } from '@ngrx/store';
+import { SubjectActions } from '../actions';
 import { ProcessStatus } from '../enums/process-status.enum';
 import { Process } from '../interfaces/process.interface';
-import { Subject } from '../interfaces/responses.interface';
 
 export interface State {
-  data: Subject[];
+  subjects: Subject[];
   process: Process;
 }
 
 export const initialState: State = {
-  data: [],
+  subjects: [],
   process: {
     status: ProcessStatus.normal,
     error: null

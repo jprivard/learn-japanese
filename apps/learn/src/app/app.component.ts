@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WanikaniFacade } from '@japanese/wanikani';
 
 @Component({
   selector: 'japanese-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'learn';
+
+  constructor(private wanikani: WanikaniFacade) {
+    this.wanikani.loadByReview();
+  }
 }
