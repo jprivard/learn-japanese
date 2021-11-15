@@ -119,6 +119,32 @@
       },
       "tags": [],
       "implicitDependencies": ["learn"]
+    },
+    "wanikani": {
+      "projectType": "library",
+      "root": "libs/wanikani",
+      "sourceRoot": "libs/wanikani/src",
+      "prefix": "japanese",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/wanikani"],
+          "options": {
+            "jestConfig": "libs/wanikani/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/wanikani/src/**/*.ts",
+              "libs/wanikani/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
     }
   }
 }
