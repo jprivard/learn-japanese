@@ -7,6 +7,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClientModule } from '@angular/common/http';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument(),
     HttpClientModule,
-    WanikaniModule
+    WanikaniModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent],
